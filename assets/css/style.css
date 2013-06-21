@@ -300,7 +300,9 @@ p.header {
     padding-right: 20px;
 	padding-left: 20px;
 	padding-bottom: 20px;
-	background: #f4f5f6;
+    margin-top: 0px;
+    padding-top: 0px;
+    background-color: #f4f5f6;;
 }
 
 #apps h1{
@@ -309,7 +311,20 @@ p.header {
     letter-spacing: 5px;
 }
 
+.bottom-line{
+	background: #fff url(../img/bottom_line.png) no-repeat center;
+	min-height: 60px;
+}
 
+.top-line{
+	background: #fff url(../img/top_line.png) no-repeat bottom;
+	min-height: 100px;
+}
+
+.container{
+    margin-top: 0px;
+    padding-top: 0px;
+}
 
 #apptitle{
    
