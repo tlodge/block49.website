@@ -276,13 +276,24 @@ p.header {
     
 }
 
+.rightcol{
+    background: #04bf9b;
+    z-index: 1;
+}
+
 .tile {
-    background-color: #f4f5f6;
-    border-radius: 6px 6px 6px 6px;
-    margin-bottom: 25px;
-    position: relative;
+    background-color: #009F98; /*#f4f5f6;*/
     text-align: center;
-    margin-top: 10px;
+margin-top: -80px;
+min-height: 500px;
+z-index:-500px;
+}
+
+.tile p{
+     color: white;
+      padding: 10px;
+  
+     
 }
 
 #about i {
@@ -291,18 +302,14 @@ p.header {
     line-height: 1.0 !important;
 }
 
-.tile p{
-    padding: 10px;
-}
-
-
 #apps {
     padding-right: 20px;
 	padding-left: 20px;
 	padding-bottom: 20px;
     margin-top: 0px;
     padding-top: 0px;
-    background-color: #f4f5f6;;
+    background-color: #f4f5f6;
+    z-index: 999999999;
 }
 
 #apps h1{
@@ -314,11 +321,23 @@ p.header {
 .bottom-line{
 	background: #fff url(../img/bottom_line.png) no-repeat center;
 	min-height: 60px;
+	z-index: 999999;
 }
 
 .top-line{
 	background: #fff url(../img/top_line.png) no-repeat bottom;
 	min-height: 100px;
+}
+
+.top-line-small{
+	background: transparent url(../img/top_line_small.png) no-repeat top;
+	min-height: 25px;
+	margin-top:-25px;
+}
+
+.bottom-line-small{
+    background: #fff url(../img/bottom_line_small.png) no-repeat top;
+	min-height: 42px;
 }
 
 .container{
@@ -714,14 +733,15 @@ input[type="text"], select, textarea {
 }
 
 .thumbnail h4 {
-	 color:#009f98;  
+	 color:#fff;  
 	 text-align: center; 
 	padding: 20px;
 	margin: 0;
-	font-size: 20px;
+	font-size: 30px;
 	font-weight: 700;
 	text-transform: none;
-	letter-spacing: -1px;
+	letter-spacing: 1px;
+	
 }
 
 .thumbnail span {
