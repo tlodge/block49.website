@@ -284,9 +284,15 @@ p.header {
 .tile {
     background-color: #009F98; /*#f4f5f6;*/
     text-align: center;
-margin-top: -80px;
-min-height: 500px;
-z-index:-500px;
+    margin-top: -80px;
+   
+
+   
+}
+
+.border{
+ border: 2px solid #000;
+  min-height: 500px;
 }
 
 .tile p{
