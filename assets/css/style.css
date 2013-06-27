@@ -738,8 +738,9 @@ input[type="text"], select, textarea {
 	-o-box-shadow: none;
 }
 
+
 .thumbnail h4 {
-	 color:#fff;  
+	 color: #009F98;  
 	 text-align: center; 
 	padding: 20px;
 	margin: 0;
