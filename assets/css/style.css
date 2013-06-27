@@ -739,6 +739,7 @@ input[type="text"], select, textarea {
 }
 
 
+
 .thumbnail h4 {
 	 color: #009F98;  
 	 text-align: center; 
@@ -749,6 +750,10 @@ input[type="text"], select, textarea {
 	text-transform: none;
 	letter-spacing: 1px;
 	
+}
+
+.tile .thumbnail h4{
+    color: #fff;   
 }
 
 .thumbnail span {
