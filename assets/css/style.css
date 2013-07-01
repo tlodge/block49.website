@@ -282,9 +282,9 @@ p.header {
 }
 
 .tile {
-    background-color: #009F98; /*#f4f5f6;*/
+    background-color: #fff; /*#04bf9b; /* #f4f5f6;*/
     text-align: center;
-    margin-top: -80px;
+    margin-top: -60px;
    
 
    
@@ -292,11 +292,11 @@ p.header {
 
 .border{
  border: 2px solid #000;
-  min-height: 500px;
+  min-height: 300px;
 }
 
 .tile p{
-     color: white;
+     color: black;
       padding: 10px;
   
      
@@ -753,7 +753,7 @@ input[type="text"], select, textarea {
 }
 
 .tile .thumbnail h4{
-    color: #fff;   
+    color: black;   
 }
 
 .thumbnail span {
