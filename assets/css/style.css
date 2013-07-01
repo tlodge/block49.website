@@ -370,8 +370,7 @@ strong{
 }
 
 #about h2{
-    text-align: left;
-    padding-left: 20px;
+    text-align: center;
 }
 
 #hint1  {
@@ -966,6 +965,11 @@ input[type="text"], select, textarea {
 .btn{
     text-shadow: none;
     border-radius: 0px 0px 0px 0px;
+  
+}
+
+.thumbnail p.center {
+  text-align: center;
 }
 
 .flat-butt {
