@@ -284,11 +284,20 @@ p.header {
 .tile {
     background-color: #fff; /*#04bf9b; /* #f4f5f6;*/
     text-align: center;
-    margin-top: -60px;
-   
-
-   
+    margin-top: -60px;  
 }
+
+.app_image img{
+    opacity: 0.2;
+}
+
+.app_image img:hover{
+    opacity: 0.8;
+}
+
+.app_image img.active{
+    opacity: 1.0;
+} 
 
 .border{
  border: 2px solid #000;
@@ -748,6 +757,7 @@ input[type="text"], select, textarea {
 	font-weight: 700;
 	text-transform: none;
 	letter-spacing: 1px;
+	line-height: 30px;
 	
 }
 
@@ -954,9 +964,7 @@ input[type="text"], select, textarea {
 
 
 
-.faded{
-    opacity: 0.2;
-}
+
 
 
 

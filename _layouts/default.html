@@ -15,8 +15,53 @@
         <link rel="icon" type="image/ico" href="favicon.ico">
     </head>
     <body data-spy="scroll" data-target=".navbar" data-offset='64' onLoad="$.stellar();">
-   
-        {{ content }}
+    	<!--start navigation-->
+    <div class="navbar navbar-fixed-top" id="navigation">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a href="#intro" class="brand"><img src="/assets/img/block49logo.png" alt="block49 logo"></a>
+                <div class="nav-collapse collapse">
+                    <ul class="nav pull-right">
+                        {% assign url = page.url|remove:'index.html' %}
+                        {% assign subnav = nil %}
+                        
+                        {% for link in site.navigation %}
+                            {% if url == link.url %}
+                                {% assign subnav = link.subnav %}
+                            {% endif %}
+                            {% if link.header != nil %}
+                                <li class="nav-header">{{link.text}}</li>
+                            {% else %}
+                                <li {% if url == link.url %}class="active"{% endif %}>
+                                    <a href="{{link.url}}" title="{{link.title}}">{{link.text}}</a>
+                                </li>
+                            {% endif %}
+                         {% endfor %} 
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% if subnav != nil %}
+        <div class="navbar-inner">
+            <div class="container">	
+                <div class="nav-collapse collapse">
+                    <ul class="nav nav-subnav pull-right">
+                     {% for item in subnav %}
+                              <li>  <a href="#{{item.text}}-top">{{item.text}}</a></li> 
+                     {% endfor %} 
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    <!-- end navigation -->
+    {{ content }}
         
        <script src="/assets/js/core.js" type="text/javascript"></script>
         <script type="text/javascript">

@@ -4,4 +4,16 @@ assets:
   compress:
     css:  sass
     js:   uglifier
-
+navigation:
+-   text: home
+    url: /
+    subnav:
+        -   text: audience
+        -   text: information
+        -   text: communicate
+-   text: inspiration
+    url: /inspiration/roomcast
+-   text: blog
+    url: /blog
+-   text: about us    
+    url: /about
