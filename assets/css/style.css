@@ -334,13 +334,13 @@ p.header {
 }
 
 .bottom-line{
-	background: #fff url(../img/bottom_line.png) no-repeat center;
+	background: #fff url(../img/bottom_line2.png) no-repeat center;
 	min-height: 60px;
 	z-index: 999999;
 }
 
 .top-line{
-	background: #fff url(../img/top_line.png) no-repeat bottom;
+	background: #fff url(../img/top_line2.png) no-repeat bottom;
 	min-height: 100px;
 }
 
