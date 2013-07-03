@@ -768,7 +768,7 @@ input[type="text"], select, textarea {
 .thumbnail span {
     text-align: center;
 	font-size: 13px;
-	color: #bbbdc0;
+	color: #808080; /*#bbbdc0;*/
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 100;
