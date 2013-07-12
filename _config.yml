@@ -13,7 +13,7 @@ navigation:
         -   text: communicate
 -   text: inspiration
     url: /inspiration/roomcast
--   text: blog
-    url: /blog
+-   text: survey
+    url: /survey
 -   text: about us    
     url: /about
