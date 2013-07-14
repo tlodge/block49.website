@@ -7,12 +7,48 @@ StackMob.init({
 // Keep app self-contained
 var myApp = (function($) {
 
-  var Todo = StackMob.Model.extend({
+  var Survey = StackMob.Model.extend({
     schemaName: 'survey'
   });
-
+   
   var HomeView = Backbone.View.extend({
+    
+    events: {
+        "submit form": "submit"
+    },
+    
+    submit: function(e) {
+        e.preventDefault();
+        var item = $('#surveyForm').serializeObject(),
+        router = this.router;
+        console.log(item);
+        // Create a new instance of the todo model and populate it
+        // with your form data.
+       
+        /*var survey = new Survey(item);
 
+        // Call the create method to save your data at stackmob
+        survey.create({
+            success: function(model, result, options) {
+
+              // Add new item to your collection
+              collection.add(model);
+
+              // Send a change event to our collection so the
+              // list of todos is refreshed on our homepage.
+              collection.trigger('change');
+
+              // Return back to the home page
+              router.navigate('#', {
+                trigger: true,
+                replace: false
+              });
+            }
+        });*/
+        
+        return this;
+    },
+    
     initialize: function() {
       homeTemplate = _.template($('#home').html());
     },
@@ -26,7 +62,7 @@ var myApp = (function($) {
 
   var AppRouter = Backbone.Router.extend({
     routes: {
-      "": "home"
+      "": "home",
       /*,
       "add": "add",
       "update/:id": "update"*/
@@ -48,7 +84,7 @@ var myApp = (function($) {
        
       }), true);
     },
-
+    
     changePage: function(page, reverse) {
       $(page.el).attr('data-role', 'page');
       page.render();
