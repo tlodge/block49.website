@@ -11,12 +11,43 @@ var myApp = (function($) {
     schemaName: 'survey'
   });
    
+   
   var HomeView = Backbone.View.extend({
     
+    surveyFile: {
+    
+    },
+
     events: {
-        "submit form": "submit"
+        "submit form": "submit",
+        "change #files": "handleFileSelect"
     },
     
+    handleFileSelect: function(evt){
+        console.log(evt.target.files);
+        
+        var files = evt.target.files;
+        for (var i = 0, f; f = files[i]; i++){
+            var reader = new FileReader();
+           
+            reader.onload= (function(theFile){
+                return function(e){
+                    
+                    var base64Content = e.target.result.substring(e.target.result.indexOf(",") + 1, e.target.result.length);
+                    
+                    surveyFile = {
+                        name:theFile.name,
+                        type:theFile.type,
+                        content:base64Content
+                    };
+                }
+            })(f);
+            
+            fileContent = reader.readAsDataURL(f);
+        
+        }
+    },
+  
     submit: function(e) {
         e.preventDefault();
         var item = $('#surveyForm').serializeObject(),
@@ -25,32 +56,50 @@ var myApp = (function($) {
         // Create a new instance of the todo model and populate it
         // with your form data.
        
-        /*var survey = new Survey(item);
-
+        var survey = new Survey(item);
+        
+        console.log(surveyFile);
+        
+        survey.setBinaryFile('service_charge_file', surveyFile.name, surveyFile.type, surveyFile.content);
         // Call the create method to save your data at stackmob
         survey.create({
             success: function(model, result, options) {
-
+               console.log("successfully saved the thing!");
               // Add new item to your collection
-              collection.add(model);
-
+            
               // Send a change event to our collection so the
               // list of todos is refreshed on our homepage.
-              collection.trigger('change');
+              //collection.trigger('change');
 
               // Return back to the home page
-              router.navigate('#', {
-                trigger: true,
-                replace: false
-              });
+              //router.navigate('#', {
+              //  trigger: true,
+              //  replace: false
+              //});
             }
-        });*/
+        });
         
         return this;
     },
+
+    attach: function(evt){
     
+    },
+        
     initialize: function() {
       homeTemplate = _.template($('#home').html());
+      console.log("initing.");
+      //x= document.getElementById("files");
+      //console.log(x);
+      //$(x).append("<H1>ljdlksjlkdj</h1>");
+      
+      //$('#service_charge_statement')[0].addEventListener('change', function(){alert("NICE!");}, false);
+  
+       //$('#service_charge_statement').bind('click', function() {
+        //    console.log("amIN HETE.");
+         //   alert('User clicked on "foo."');
+      //});
+
     },
 
     render: function(eventName) {
@@ -67,7 +116,7 @@ var myApp = (function($) {
       "add": "add",
       "update/:id": "update"*/
     },
-
+    
     initialize: function(options) {
       // Handle back button throughout the application
       $('.back').on('click', function(event) {
@@ -76,6 +125,7 @@ var myApp = (function($) {
         return false;
       });
       this.firstPage = true;
+   
       //this.collection = options.collection;
     },
 
@@ -90,6 +140,10 @@ var myApp = (function($) {
       page.render();
       $('body').append($(page.el));
     }
+    
+   
+    
+    
   });
 
   var initialize = function() {
