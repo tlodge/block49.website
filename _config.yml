@@ -1,4 +1,4 @@
-name: Your New Jekyll Site
+name: Inspiration
 pygments: true
 assets:
   compress:
@@ -12,7 +12,7 @@ navigation:
         -   text: information
         -   text: communicate
 -   text: inspiration
-    url: /inspiration/roomcast
+    url: /inspiration
 -   text: blog
     url: /blog
 -   text: about us    
